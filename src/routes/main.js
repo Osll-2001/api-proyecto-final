@@ -1,8 +1,10 @@
-const express=require('express')
+const express = require('express')
 const BandsRouter = require('./bands')
+const SongsRouter = require('./songs')
 
-const routerApi=(app)=>{
-  app.use('/bands',BandsRouter)
+const routerApi = (app) => {
+  app.use('/bands', BandsRouter)
+  app.use('/songs', SongsRouter)
 }
 
-module.exports=routerApi
+module.exports = routerApi
