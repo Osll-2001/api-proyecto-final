@@ -1,4 +1,3 @@
-const express = require('express')
 const BandsRouter = require('./bands')
 const SongsRouter = require('./songs')
 
