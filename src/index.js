@@ -6,6 +6,8 @@ const port = 5000
 
 mongoose.connect('mongodb+srv://osll:osll2001@cluster0.79prd.mongodb.net/iesit?retryWrites=true&w=majority')
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hola' })
 })
