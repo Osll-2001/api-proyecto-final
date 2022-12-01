@@ -8,6 +8,16 @@ const SongsService = {
     } catch (err) {
       throw Error('Error', err)
     }
+  },
+  create: async (body) => {
+    try {
+      const newId = await Songs.count() + 1
+      Object.assign(body, { _id: newId })
+      const newSong = new Songs(body)
+      await newSong.save()
+    } catch (err) {
+      throw Error('Error', err)
+    }
   }
 }
 
