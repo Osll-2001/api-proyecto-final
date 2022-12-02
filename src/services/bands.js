@@ -26,6 +26,14 @@ const BandService = {
     } catch (err) {
       throw Error('Error', err)
     }
+  },
+  delete: async (id) => {
+    try {
+      const band = await Bands.findOne({ _id: id })
+      await band.remove()
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
   }
 }
 
