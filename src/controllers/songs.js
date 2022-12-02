@@ -11,6 +11,15 @@ const BandsController = {
       res.status(404).json({ message: err.message })
     }
   },
+  getById: async (req, res) => {
+    const { id } = req.params
+    try {
+      const song = await SongsService.getById(id)
+      res.status(200).json({ data: song })
+    } catch (err) {
+      res.status(404).json({ message: err.message })
+    }
+  },
   create: async (req, res) => {
     const { body } = req
     try {
