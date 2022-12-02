@@ -9,6 +9,14 @@ const BandService = {
       throw Error('Error', err)
     }
   },
+  getById: async (id) => {
+    try {
+      const song = await Bands.findById(id)
+      return song
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
+  },
   create: async (body) => {
     try {
       const newId = await Bands.count() + 1

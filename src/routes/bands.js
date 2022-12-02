@@ -3,6 +3,7 @@ const BandsRouter = express.Router()
 const BandsController = require('../controllers/bands')
 
 BandsRouter.get('/', BandsController.get)
+BandsRouter.get('/:id', BandsController.getById)
 BandsRouter.post('/', BandsController.create)
 
 module.exports = BandsRouter
