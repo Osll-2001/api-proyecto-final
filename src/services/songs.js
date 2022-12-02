@@ -26,6 +26,14 @@ const SongsService = {
     } catch (err) {
       throw Error('Error', err)
     }
+  },
+  delete: async (id) => {
+    try {
+      const song = await Songs.findOne({ _id: id })
+      await song.remove()
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
   }
 }
 

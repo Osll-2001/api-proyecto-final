@@ -28,6 +28,15 @@ const BandsController = {
     } catch (err) {
       res.status(500).json({ message: err.message })
     }
+  },
+  delete: async (req, res) => {
+    const { id } = req.params
+    try {
+      await SongsService.delete(id)
+      res.status(200).json({ message: 'Se Eliminó la canción' })
+    } catch (err) {
+      res.status(500).json({ message: err.message })
+    }
   }
 }
 

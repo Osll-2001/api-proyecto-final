@@ -15,6 +15,7 @@ const BandsController = {
 
     try {
       const band = await BandsService.getById(id)
+      // if (!band) band = 'No se encontro a la banda'
       res.status(200).json({ data: band })
     } catch (err) {
       res.status(404).json({ message: err.message })
