@@ -27,6 +27,25 @@ const SongsService = {
       throw Error('Error', err)
     }
   },
+  updatePartial: async (id, body) => {
+    try {
+      const song = await Songs.findOne({ _id: id })
+      Object.assign(song, body)
+      song.save()
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
+  },
+
+  updateComplete: async (id, body) => {
+    try {
+      const song = await Songs.findOne({ _id: id })
+      Object.assign(song, body)
+      song.save()
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
+  },
   delete: async (id) => {
     try {
       const song = await Songs.findOne({ _id: id })
