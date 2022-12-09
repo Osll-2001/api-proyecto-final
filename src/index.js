@@ -1,5 +1,5 @@
 const express = require('express')
-const { default: mongoose } = require('mongoose')
+const mongoose = require('mongoose')
 const routerApi = require('./routes/main')
 const cors = require('cors')
 const app = express()
