@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const routerApi = require('./routes/main')
 const cors = require('cors')
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000
 
 mongoose.connect('mongodb+srv://osll:osll2001@cluster0.79prd.mongodb.net/iesit?retryWrites=true&w=majority')
 
