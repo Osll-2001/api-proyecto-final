@@ -5,7 +5,7 @@ const Bands = mongoose.model('Bands', {
   name: { type: String, required: true },
   genre: { type: String, required: true },
   yearStart: { type: Number },
-  ulrImage: { type: String }
+  urlImage: { type: String }
 })
 
 module.exports = Bands
