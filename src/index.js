@@ -1,6 +1,7 @@
 const express = require('express')
 const { default: mongoose } = require('mongoose')
 const routerApi = require('./routes/main')
+const cors = require('cors')
 const app = express()
 const port = 5000
 
@@ -11,6 +12,10 @@ app.use(express.json())
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hola' })
 })
+
+app.use(cors({
+  origin: '*'
+}))
 
 routerApi(app)
 
