@@ -27,6 +27,25 @@ const BandService = {
       throw Error('Error', err)
     }
   },
+  updatePartial: async (id, body) => {
+    try {
+      const band = await Bands.findOne({ _id: id })
+      Object.assign(band, body)
+      band.save()
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
+  },
+
+  updateComplete: async (id, body) => {
+    try {
+      const band = await Bands.findOne({ _id: id })
+      Object.assign(band, body)
+      band.save()
+    } catch (err) {
+      throw Error('Error: ', err)
+    }
+  },
   delete: async (id) => {
     try {
       const band = await Bands.findOne({ _id: id })
